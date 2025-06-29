@@ -1,0 +1,19 @@
+server.port: 8088
+
+spring:
+  application:
+    name: oauth_sso
+  datasource:
+    url: jdbc:mysql://localhost:3306/sso
+    username: sso
+    password: password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    open-in-view: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+
+  profiles:
+    active: oauth2
