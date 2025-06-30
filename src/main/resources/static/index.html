@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OAuth 2.0 Login</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin-top: 50px;
+        }
+        #kakao-login-btn {
+            width: 150px;
+            height: 40px;
+            cursor: pointer;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>OAuth 2.0 Login</h1>
+
+    <img
+        id="kakao-login-btn"
+        src="/assets/icons/kakao_login_medium_narrow.png"
+        alt="카카오 로그인"
+        title="카카오 로그인"
+    />
+
+    <script>
+        document.getElementById('kakao-login-btn').addEventListener('click', function () {
+            const kakaoAuthUrl = 'https://kauth.kakao.com/oauth/authorize';
+            const kakaoClientId = 'f615cad632805f0b9d40f13b8f59d9a1';
+            const kakaoRedirectUrl = 'http://localhost:8088/api/v1/oauth2/kakao';
+
+            // 카카오 인가 URL 생성
+            const url = `${kakaoAuthUrl}?client_id=${kakaoClientId}&redirect_uri=${kakaoRedirectUrl}&response_type=code`;
+
+            // 페이지 이동
+            window.location.href = url;
+        });
+    </script>
+</body>
+</html>
