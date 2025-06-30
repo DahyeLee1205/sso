@@ -34,7 +34,7 @@
             const kakaoRedirectUrl = 'http://localhost:8088/api/v1/oauth2/kakao';
 
             // 카카오 인가 URL 생성
-            const url = `${kakaoAuthUrl}?client_id=${kakaoClientId}&redirect_uri=${kakaoRedirectUrl}&response_type=code`;
+            const url = `${kakaoAuthUrl}?client_id=${kakaoClientId}&redirect_uri=${kakaoRedirectUrl}&response_type=code&scope=account_email,profile_nickname,profile_image`;
 
             // 페이지 이동
             window.location.href = url;
