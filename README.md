@@ -3,7 +3,7 @@
 
 ### **1-1. 사용 스택**
 
-SpringBoot + JPA + Gradle + MySQL + JWT
+SpringBoot 3.3.2 + JDK 21 + SpringSecurity + JPA + Gradle + MySQL + JWT
 
 
 ### **1-2. 플로우**
@@ -31,7 +31,7 @@ sequenceDiagram
     Resource Server(Kakao)->>Resource Server(Kakao): AccessToken 검증
     Resource Server(Kakao)->>Server: 사용자 정보 반환(id, email, profile, ..)
     Server<<->> DB: 사용자 정보 DB 조회 및 저장(refresh_token 포함)
-    Server->>Client : access_token 쿠키 세션에 전달
+    Server->>Client : access_token 쿠키에 전달
 ```
 
 
@@ -46,5 +46,5 @@ sequenceDiagram
     Server<<->>DB: 사용자 정보 조회
     Server->>Server: 조회한 사용자의 refresh_token 과 전달받은 refreshToken 비교
     Server->>Server: refresh_token 만료여부 확인
-    Server->>Client: acccess_token 쿠키 세션에 저장
+    Server->>Client: acccess_token 쿠키에 전달
 ```
